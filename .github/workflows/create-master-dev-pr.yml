@@ -1,0 +1,25 @@
+on:
+  push:
+    branches:
+      - master
+
+name: create master → dev PR
+
+jobs:
+  auto_create_master_dev_pr:
+    name: Auto create master → dev PR
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@master
+        with:
+          fetch-depth: 1
+
+      - name: install hub
+        run: curl -qs https://raw.githubusercontent.com/inextensodigital/github/master/install-hub.sh | bash -
+
+      - name: Auto create master → dev PR
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: hub pull-request -b dev -h master -m "master → dev" || exit 0
