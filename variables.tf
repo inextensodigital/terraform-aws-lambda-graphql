@@ -81,3 +81,9 @@ variable "vpc" {
   type        = "map"
   description = "expected subnet_ids => [] and security_group_ids => []"
 }
+
+variable "secret_managers" {
+  type        = "list"
+  description = "list of the secret manager the lambda can read"
+  default     = []
+}
