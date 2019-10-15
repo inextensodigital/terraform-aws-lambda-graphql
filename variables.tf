@@ -87,3 +87,8 @@ variable "secret_managers" {
   description = "list of the secret manager the lambda can read"
   default     = []
 }
+
+variable "environment" {
+  type        = "map"
+  description = "key value map of environment variables to give to the lambda"
+}
