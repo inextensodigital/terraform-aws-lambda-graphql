@@ -80,7 +80,7 @@ resource "aws_lambda_function" "graphql" {
 
   environment {
     variables = {
-      stage = var.stage
+      STAGE = var.stage
     }
   }
 
