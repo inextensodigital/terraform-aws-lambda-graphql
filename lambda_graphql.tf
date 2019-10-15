@@ -79,9 +79,7 @@ resource "aws_lambda_function" "graphql" {
   }
 
   environment {
-    variables = {
-      STAGE = var.stage
-    }
+    variables = var.environment
   }
 
   role = aws_iam_role.graphql_lambda_role.arn
