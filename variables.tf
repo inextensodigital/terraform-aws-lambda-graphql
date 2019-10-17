@@ -94,25 +94,25 @@ variable "environment" {
 }
 
 variable "lambda_handler" {
-  type = string
-  description "the lambda handler"
-  default = "index.hanlder"
+  type        = string
+  description = "the lambda handler"
+  default     = "index.hanlder"
 }
 
 variable "lambda_runtime" {
-  type = string
-  description "the lambda runtime"
-  default = "nodejs10.x"
+  type        = string
+  description = "the lambda runtime"
+  default     = "nodejs10.x"
 }
 
 variable "lambda_timeout" {
-  type = number
-  description "the lambda timeout"
-  default = 6
+  type        = number
+  description = "the lambda timeout"
+  default     = 6
 }
 
 variable "lambda_memory_size" {
-  type = number
-  description "the lambda memory_size"
-  default = 1024
+  type        = number
+  description = "the lambda memory_size"
+  default     = 1024
 }
