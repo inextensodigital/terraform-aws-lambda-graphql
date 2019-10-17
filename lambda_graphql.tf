@@ -62,14 +62,13 @@ resource "aws_lambda_function" "graphql" {
   s3_bucket = data.aws_s3_bucket.deployment_bucket.id
   s3_key    = var.backend_s3_key
 
-  handler = "index.handler"
-  runtime = "nodejs10.x"
+  handler = var.lambda_handler
+  runtime = var.lambda_runtime
 
   publish = true
 
-  timeout = 6
-
-  memory_size = 1024
+  timeout     = var.lambda_timeout
+  memory_size = var.lambda_memory_size
 
   tags = "${var.common_tags}"
 
