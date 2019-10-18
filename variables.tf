@@ -96,7 +96,7 @@ variable "environment" {
 variable "lambda_handler" {
   type        = string
   description = "the lambda handler"
-  default     = "index.hanlder"
+  default     = "index.handler"
 }
 
 variable "lambda_runtime" {
