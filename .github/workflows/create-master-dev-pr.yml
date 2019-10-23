@@ -21,5 +21,5 @@ jobs:
 
       - name: Auto create master → dev PR
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.IEDBOT_TOKEN }}
         run: hub pull-request -b dev -h master -m "master → dev" || exit 0
