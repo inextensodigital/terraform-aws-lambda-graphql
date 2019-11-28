@@ -25,7 +25,7 @@ data "aws_iam_policy_document" "graphql_group_policy" {
 }
 
 resource "aws_iam_role" "graphql_lambda_role" {
-  name               = "${local.camel_app_name}Graphql${title(var.stage)}"
+  name               = "${local.camel_app_name}GraphqlLambdaRole${title(var.stage)}"
   assume_role_policy = data.aws_iam_policy_document.graphql_group_policy.json
 }
 
