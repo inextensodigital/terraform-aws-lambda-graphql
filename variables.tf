@@ -58,7 +58,7 @@ variable "graphql_domain" {
 }
 
 variable "graphql_binary_media_types" {
-  type        = array(string)
+  type        = list(string)
   description = "binary media types given to graphql api gateway"
   default     = null
 }
