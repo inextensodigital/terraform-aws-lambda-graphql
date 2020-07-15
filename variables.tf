@@ -57,6 +57,11 @@ variable "graphql_domain" {
   description = "the graphql api gateway"
 }
 
+variable "graphql_binary_media_types" {
+  type = array(string)
+  description: "binary media types given to "
+}
+
 variable "alternate_graphql_domain" {
   type        = "string"
   description = "the graphql api gateway domain not managed by terraform"
