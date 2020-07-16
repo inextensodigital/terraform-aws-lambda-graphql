@@ -1,6 +1,8 @@
 resource "aws_api_gateway_rest_api" "graphql" {
   description = "graphql api gateway"
   name        = "${local.graphql_gateway_name}"
+
+  binary_media_types = var.graphql_binary_media_types
 }
 
 resource "aws_api_gateway_resource" "graphql" {
