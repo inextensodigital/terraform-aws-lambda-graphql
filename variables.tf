@@ -122,3 +122,9 @@ variable "lambda_memory_size" {
   description = "the lambda memory_size"
   default     = 1024
 }
+
+variable "lambda_publish" {
+  type        = bool
+  description = "whether or not a new version of the lambda is published"
+  default     = false
+}

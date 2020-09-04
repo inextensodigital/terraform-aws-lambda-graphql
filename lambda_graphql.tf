@@ -65,7 +65,7 @@ resource "aws_lambda_function" "graphql" {
   handler = var.lambda_handler
   runtime = var.lambda_runtime
 
-  publish = true
+  publish = var.lambda_publish
 
   timeout     = var.lambda_timeout
   memory_size = var.lambda_memory_size
