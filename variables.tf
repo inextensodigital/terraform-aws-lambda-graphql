@@ -132,7 +132,7 @@ variable "lambda_publish" {
 variable "gateway_type" {
   type        = string
   description = "endpoint types Valid values: EDGE, REGIONAL or PRIVATE"
-  default     = EDGE
+  default     = "EDGE"
 }
 
 variable "gateway_vpc_ids" {
