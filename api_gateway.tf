@@ -4,9 +4,7 @@ resource "aws_api_gateway_rest_api" "graphql" {
   
   endpoint_configuration {
     types = [var.gateway_type ]
-    vpc_endpoint_ids = (types == "PRIVATE" ?
-      var.gateway_vpc_ids :
-      null)
+    vpc_endpoint_ids = var.gateway_type == "PRIVATE" ? var.gateway_vpc_ids : null
   }
 
   binary_media_types = var.graphql_binary_media_types
