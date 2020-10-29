@@ -3,7 +3,12 @@ resource "aws_api_gateway_rest_api" "graphql" {
   name        = "${local.graphql_gateway_name}"
   endpoint_configuration {
     types = ["${var.gateway_type }"]
-    vpc_endpoint_ids = ["${var.gateway_vpc_ids }"]
+    vpc_endpoint_ids = [types == "PRIVATE" ?
+    ["${var.gateway_vpc_ids }"] :
+    []
+  ]
+    
+    
   }
   binary_media_types = var.graphql_binary_media_types
 }

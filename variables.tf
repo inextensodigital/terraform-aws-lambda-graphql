@@ -137,10 +137,6 @@ variable "gateway_type" {
 
 variable "gateway_vpc_ids" {
   type        = list(string)
-  description = " A list of VPC Endpoint Ids. It is only supported for PRIVATE endpoint type."
-  default     =  {
-    "dev": null,
-    "preprod": null,
-    "prod": null
-  }
+  description = "A list of VPC Endpoint Ids. It is only supported for PRIVATE endpoint type."
+  default     = null
 }
