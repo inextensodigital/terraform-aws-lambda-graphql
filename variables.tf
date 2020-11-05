@@ -140,3 +140,9 @@ variable "gateway_vpc_ids" {
   description = "A list of VPC Endpoint Ids. It is only supported for PRIVATE endpoint type."
   default     = null
 }
+
+variable "aws_iam_policy_document" {
+  type        = JSON
+  description = "JSON formatted policy document that controls access to the API Gateway."
+  default     = null
+}
