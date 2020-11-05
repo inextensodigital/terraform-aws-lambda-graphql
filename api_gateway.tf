@@ -2,7 +2,7 @@ resource "aws_api_gateway_rest_api" "graphql" {
   description = "graphql api gateway"
   name        = "${local.graphql_gateway_name}"
   
-  policy = var.gateway_type == "PRIVATE" ?  var.aws_iam_policy_document.json : null
+  policy = var.gateway_type == "PRIVATE" ?  var.aws_api_gateway_policy_document.json : null
   
   endpoint_configuration {
     types = [var.gateway_type ]
