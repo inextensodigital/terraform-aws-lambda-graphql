@@ -142,7 +142,7 @@ variable "gateway_vpc_ids" {
 }
 
 variable "aws_api_gateway_policy_document" {
-  type        = JSON
+  type        = string
   description = "JSON formatted policy document that controls access to the API Gateway."
   default     = null
 }
