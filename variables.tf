@@ -128,3 +128,21 @@ variable "lambda_publish" {
   description = "whether or not a new version of the lambda is published"
   default     = false
 }
+
+variable "gateway_type" {
+  type        = string
+  description = "endpoint types Valid values: EDGE, REGIONAL or PRIVATE"
+  default     = "EDGE"
+}
+
+variable "gateway_vpc_ids" {
+  type        = list(string)
+  description = "A list of VPC Endpoint Ids. It is only supported for PRIVATE endpoint type."
+  default     = null
+}
+
+variable "aws_api_gateway_policy_document" {
+  type        = string
+  description = "JSON formatted policy document that controls access to the API Gateway."
+  default     = null
+}
