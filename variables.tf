@@ -129,6 +129,12 @@ variable "lambda_publish" {
   default     = false
 }
 
+variable "lambda_reserved_concurrent_executions" {
+  type        = number
+  description = "limit the lambda concurrent executions (null default is no limitation)"
+  default     = null
+}
+
 variable "gateway_type" {
   type        = string
   description = "endpoint types Valid values: EDGE, REGIONAL or PRIVATE"
