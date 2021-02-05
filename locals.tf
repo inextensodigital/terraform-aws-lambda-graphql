@@ -6,12 +6,10 @@ locals {
   camel_app_name = replace(title(replace(var.app_name, "/\\W+/", " ")), " ", "")
 
   # API GATEWAY VARIABLES
-  graphql_gateway_name = "${var.stage}-${var.app_name}-graphql"
+  gateway_name = "${var.stage}-${var.app_name}-graphql"
 
   # LAMBDA VARIABLES
-  graphql_lambda_function_name = "${var.stage}-${var.app_name}-graphql"
-
-
+  lambda_function_names = [for route in var.routes : "${var.stage}-${var.app_name}-${route.canonical_name}"]
 
 
   api_graphql_domain = [var.alternate_graphql_domain == null ?

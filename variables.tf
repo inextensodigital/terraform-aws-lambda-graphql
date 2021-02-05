@@ -99,28 +99,10 @@ variable "environment" {
   description = "key value map of environment variables to give to the lambda"
 }
 
-variable "lambda_handler" {
-  type        = string
-  description = "the lambda handler"
-  default     = "index.handler"
-}
-
 variable "lambda_runtime" {
   type        = string
   description = "the lambda runtime"
   default     = "nodejs10.x"
-}
-
-variable "lambda_timeout" {
-  type        = number
-  description = "the lambda timeout"
-  default     = 6
-}
-
-variable "lambda_memory_size" {
-  type        = number
-  description = "the lambda memory_size"
-  default     = 1024
 }
 
 variable "lambda_publish" {
@@ -152,3 +134,18 @@ variable "aws_api_gateway_policy_document" {
   description = "JSON formatted policy document that controls access to the API Gateway."
   default     = null
 }
+
+variable "routes" {
+  type = list(object({
+    route                          = string
+    canonical_name                 = string
+    description                    = string
+    handler                        = string
+    timeout                        = number
+    memory_size                    = number
+    reserved_concurrent_executions = number
+  }))
+
+  description = "routes mapping for the API gateway"
+}
+
